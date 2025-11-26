@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Chỉnh sửa thể loại</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container-box {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            background: #1b75c8 !important;
+            padding: 20px 28px;
+            color: white;
+            font-weight: 700;
+            font-size: 22px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        .form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #nameError {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="py-5">
+
+<script src="../assets/js/auth-guard.js"></script>
+
+<div class="container-box">
+
+    <div class="dashboard-header">
+        Chỉnh sửa thể loại sách
+    </div>
+
+    <div class="form-card">
+
+        <div class="mb-3">
+            <label class="form-label">Tên thể loại <span class="text-danger">*</span></label>
+            <input type="text" id="nameInput" class="form-control" placeholder="Nhập tên thể loại">
+            <small id="nameError" class="text-danger d-none">Tên thể loại không hợp lệ</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea id="descInput" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-secondary" onclick="window.location.href='list.html'">Quay lại</button>
+            <button class="btn btn-primary" id="updateBtn">Cập nhật</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../assets/js/edit-category.js"></script>
+
+</body>
+</html>
