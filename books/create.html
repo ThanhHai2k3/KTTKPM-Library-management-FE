@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Thêm sách mới</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container-box {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            background: #1b75c8 !important;
+            padding: 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 22px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        .form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        small.error {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="py-5">
+
+<script src="../assets/js/auth-guard.js"></script>
+
+<div class="container-box">
+
+    <div class="dashboard-header">Thêm sách mới</div>
+
+    <div class="form-card">
+
+        <div class="mb-3">
+            <label class="form-label">Tên sách <span class="text-danger">*</span></label>
+            <input type="text" id="titleInput" class="form-control" placeholder="Nhập tên sách">
+            <small id="titleError" class="text-danger error d-none">Tên sách không được để trống</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Thể loại <span class="text-danger">*</span></label>
+            <select id="categorySelect" class="form-select">
+                <option value="">-- Chọn thể loại --</option>
+            </select>
+            <small id="categoryError" class="text-danger error d-none">Vui lòng chọn thể loại</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tác giả <span class="text-danger">*</span></label>
+            <input type="text" id="authorInput" class="form-control" placeholder="Nhập tên tác giả">
+            <small id="authorError" class="text-danger error d-none">Tác giả không được để trống</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nhà xuất bản <span class="text-danger">*</span></label>
+            <input type="text" id="publisherInput" class="form-control" placeholder="Nhập nhà xuất bản">
+            <small id="publisherError" class="text-danger error d-none">Nhà xuất bản không được để trống</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea id="descInput" class="form-control" rows="4" placeholder="Mô tả sách"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-secondary" onclick="window.location.href='book-management.html'">Quay lại</button>
+            <button id="createBtn" class="btn btn-primary">Thêm sách</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="../assets/js/book-create.js"></script>
+
+</body>
+</html>

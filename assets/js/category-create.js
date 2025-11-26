@@ -7,7 +7,6 @@ const nameInput = document.getElementById("name");
 const descInput = document.getElementById("description");
 const nameError = document.getElementById("nameError");
 
-// Kiểm tra tên thể loại trùng
 async function checkCategoryExists(name) {
     const token = localStorage.getItem("accessToken");
 
@@ -25,7 +24,6 @@ async function checkCategoryExists(name) {
     }
 }
 
-// Validate realtime
 nameInput.addEventListener("input", async () => {
     const name = nameInput.value.trim();
     nameError.classList.add("d-none");
@@ -68,7 +66,7 @@ form.addEventListener("submit", async (e) => {
 
         if (!res.ok) {
             alertBox.className = "alert alert-danger";
-            alertBox.textContent = data.message || "Không thể tạo thể loại.";
+            alertBox.textContent = data.message || "Không thể tạo thể loại";
             alertBox.classList.remove("d-none");
             return;
         }

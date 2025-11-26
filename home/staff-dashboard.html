@@ -65,7 +65,6 @@
 
 <div class="container">
 
-    <!-- Header -->
     <div class="dashboard-header d-flex justify-content-between align-items-center">
         <h3>Trang chủ nhân viên</h3>
 
@@ -75,7 +74,6 @@
         </div>
     </div>
 
-    <!-- Navigation Tabs -->
     <div class="nav-tabs-container mb-4">
         <ul class="nav nav-tabs">
 
@@ -113,7 +111,6 @@
 </div>
 
 <script>
-    // Hiển thị tên nhân viên
     const fullName = localStorage.getItem("fullName");
     if (fullName) {
         document.getElementById("staffName").textContent = "Xin chào, " + fullName;

@@ -49,7 +49,6 @@ usernameInput.addEventListener("input", async () => {
     }
 });
 
-// Submit form
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 

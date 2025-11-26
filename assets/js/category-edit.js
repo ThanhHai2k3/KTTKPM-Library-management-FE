@@ -11,7 +11,6 @@ const updateBtn = document.getElementById("updateBtn");
 let oldName = "";
 let typingTimer = null;
 
-// Load thông tin ban đầu
 async function loadCategory() {
     try {
         const token = localStorage.getItem("accessToken");
@@ -27,13 +26,12 @@ async function loadCategory() {
         oldName = data.name;
 
     } catch (err) {
-        alert("Không thể tải dữ liệu.");
+        alert("Không thể tải dữ liệu");
     }
 }
 
 loadCategory();
 
-// Check tên trùng
 async function checkNameExists(name) {
     const token = localStorage.getItem("accessToken");
 
@@ -45,7 +43,6 @@ async function checkNameExists(name) {
 }
 
 
-// Validate real-time
 nameInput.addEventListener("input", () => {
     nameError.classList.add("d-none");
 
@@ -54,14 +51,12 @@ nameInput.addEventListener("input", () => {
     typingTimer = setTimeout(async () => {
         const val = nameInput.value.trim();
 
-        // Validate rỗng
         if (val === "") {
             nameError.textContent = "Tên thể loại không được để trống";
             nameError.classList.remove("d-none");
             return;
         }
 
-        // Nếu người dùng đổi tên → check trùng
         if (val.toLowerCase() !== oldName.toLowerCase()) {
             const exists = await checkNameExists(val);
             if (exists) {
@@ -74,13 +69,10 @@ nameInput.addEventListener("input", () => {
     }, 350);
 });
 
-
-// Gửi update
 updateBtn.onclick = async () => {
     const name = nameInput.value.trim();
     const desc = descInput.value.trim();
 
-    // Nếu còn lỗi đang hiển thị
     if (!nameError.classList.contains("d-none")) {
         return;
     }
@@ -110,10 +102,10 @@ updateBtn.onclick = async () => {
             alert("Cập nhật thành công!");
             window.location.href = "list.html";
         } else {
-            alert("Không thể cập nhật thể loại.");
+            alert("Không thể cập nhật thể loại");
         }
 
     } catch (err) {
-        alert("Không thể kết nối server.");
+        alert("Không thể kết nối server");
     }
 };

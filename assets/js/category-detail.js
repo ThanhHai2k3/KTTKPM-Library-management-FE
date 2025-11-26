@@ -42,8 +42,7 @@ async function loadCategoryDetail() {
         countBox.textContent = data.bookCount ?? 0;
 
     } catch (err) {
-        console.error("Error loading detail:", err);
-        alert("Không thể tải thông tin thể loại.");
+        alert("Không thể tải thông tin thể loại");
     }
 }
 
