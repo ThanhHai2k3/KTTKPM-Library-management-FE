@@ -24,16 +24,17 @@ form.addEventListener("submit", async (e) => {
                 const data = await res.json();
                 if (data.message) msg = data.message;
             } catch (_) {}
-            throw new Error(msg);
+            throw new Error(msg);   
         }
 
         const data = await res.json();
 
         const token = data.token || data.data?.token;
         localStorage.setItem("accessToken", token);
-        localStorage.setItem("username", body.username);
+        localStorage.setItem("username", data.username || data.data?.username || body.username);
+        localStorage.setItem("fullName", data.fullName || data.data?.fullName || "");
 
-        window.location.href = "../dashboard/index.html";
+        window.location.href = "../home/staff-dashboard.html";
 
     } catch (err) {
         errorAlert.innerText = err.message;

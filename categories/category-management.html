@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Quản lý thể loại sách</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .dashboard-header {
+            background: #1b75c8 !important;
+            padding: 18px 28px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 26px;
+            color: white;
+        }
+
+        .dashboard-header h3 {
+            font-weight: 700;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .menu-card {
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .menu-card:hover {
+            background-color: #f3f8ff;
+            border-color: #1b75c8;
+            transform: translateX(6px);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            font-size: 26px;
+            margin-right: 14px;
+        }
+    </style>
+</head>
+
+<body class="py-4">
+
+<script src="../assets/js/auth-guard.js"></script>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+        <h3>Quản lý thể loại sách</h3>
+
+        <button class="btn btn-light btn-sm" onclick="window.location.href='../home/staff-dashboard.html'">
+            Quay lại
+        </button>
+    </div>
+
+    <!-- Content -->
+    <div class="card p-4 shadow-sm">
+
+        <!-- Thêm thể loại -->
+        <div class="menu-card menu-item mb-3" onclick="window.location.href='create.html'">
+            <span class="menu-icon">➕</span>
+            <div>
+                <h6 class="m-0 fw-bold">Thêm thể loại</h6>
+                <small>Thêm một thể loại sách mới vào hệ thống</small>
+            </div>
+        </div>
+
+        <!-- Danh sách thể loại -->
+        <div class="menu-card menu-item" onclick="window.location.href='list.html'">
+            <span class="menu-icon">📂</span>
+            <div>
+                <h6 class="m-0 fw-bold">Danh sách thể loại</h6>
+                <small>Xem, sửa, xóa và tìm kiếm thông tin thể loại sách</small>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

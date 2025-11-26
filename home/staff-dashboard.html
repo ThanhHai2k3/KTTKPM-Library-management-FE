@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>Trang chủ nhân viên</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .dashboard-header {
+            background: #1b75c8 !important;
+            padding: 18px 28px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .dashboard-header h3 {
+            font-weight: 700;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs-container {
+            background: white;
+            border-radius: 10px;
+            padding: 12px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+        }
+
+        .nav-tabs .nav-link {
+            color: #1b75c8;
+            border: none !important;
+            font-size: 16px;
+            padding: 10px 18px;
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #1b75c8 !important;
+            color: white !important;
+            border-radius: 8px;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background-color: #e8f0ff;
+            border-radius: 8px;
+            color: #1b75c8;
+        }
+    </style>
+</head>
+
+<body class="py-4">
+
+<script src="../assets/js/auth-guard.js"></script>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+        <h3>Trang chủ nhân viên</h3>
+
+        <div class="d-flex align-items-center">
+            <span id="staffName" class="fw-semibold me-3"></span>
+            <button id="logoutBtn" class="btn btn-light btn-sm">Đăng xuất</button>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs-container mb-4">
+        <ul class="nav nav-tabs">
+
+            <li class="nav-item">
+                <a class="nav-link fw-bold"
+                   href="../books/book-management.html">
+                    Quản lý sách
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link fw-bold"
+                   href="../categories/category-management.html">
+                    Quản lý thể loại
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link fw-bold"
+                   href="../import/list.html">
+                    Nhập sách
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link fw-bold"
+                   href="../statistics/supplier.html">
+                    Thống kê
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    // Hiển thị tên nhân viên
+    const fullName = localStorage.getItem("fullName");
+    if (fullName) {
+        document.getElementById("staffName").textContent = "Xin chào, " + fullName;
+    }
+
+    // Logout
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("username");
+        window.location.href = "../auth/login.html";
+    });
+</script>
+
+</body>
+</html>
